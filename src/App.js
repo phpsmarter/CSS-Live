@@ -14,8 +14,7 @@ const MainContainer=styled.div`
   margin-right:auto;
   height:100%;
   overflow:hidden;
-  margin-top:1px;
-
+  margin-top:2px;
 `
 
 class App extends Component {

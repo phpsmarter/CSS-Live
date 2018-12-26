@@ -1,14 +1,14 @@
-import React from 'react';
+//import React from 'react';
 import styled from 'styled-components';
 //encapsule some unimport property
-const baseBox=styled.div`
-     box-sizing:border-box;
-     border:1px solid #4c4c4c;
-     background-color:black;
-     margin:2px;
-     box-shadow:2px 2px 4px rgba(0,0,0,.5) ;
-     visibility:hidden;
-`
+// const baseBox=styled.div`
+//      box-sizing:border-box;
+//      border:1px solid #4c4c4c;
+//      background-color:black;
+//      margin:2px;
+//      box-shadow:2px 2px 4px rgba(0,0,0,.5) ;
+//      visibility:hidden;
+// `
 
 const code1 = `
     const Header = styled.div\`
@@ -19,16 +19,13 @@ const code1 = `
     render(<Header>Hello styled components</Header>)
   `
 
-  
-  
-  const code2=`
+const code2=`
      const Button= styled.div\`
        padding:5px;
        border:1px solid green;
        background-color:rgba(220, 119, 139, 1);
   \`
-
-  render(<Button>Button</Button>)
+ render(<Button>Button</Button>)
 `
 
 const code3=`
@@ -56,7 +53,6 @@ render(
 `
 
 const code4=`
-
 const Button = styled.button\`
 // Adapt the colors based on primary prop 
 background: \${props => props.primary?"palevioletred" : "white"};
@@ -80,7 +76,6 @@ render(
 
 
 const code5=`
-
 // The Button from the last section without the interpolations
 const Button = styled.button\`
   color: palevioletred;
@@ -318,4 +313,41 @@ const cssGrid=`
 
    )
 `
-export {code1,code2,code3,code4,code5,code6,code7,subGrid,cssGrid};
+
+const  RamdaDemo1=`
+
+const List = items => <RT.ListGroup>{items}</RT.ListGroup>
+
+const Item = todo => <RT.ListGroupItem key={todo.id}>{todo.text}</RT.ListGroupItem>
+
+const getTodos = prop('todos')
+const TodoList = compose(List, map(Item), getTodos)
+const props = {todos: [{id: 1, text: 'foo'}, {id: 2, text: 'bar'}]}
+
+
+render(
+  <TodoList {...props} />
+
+)
+
+`
+
+const codes = [
+{code:code1,operation:{step1:["padding","number"],step2:["border","number"],step3:["background-color","red,#e6b4fd,rgba(230, 180, 253, 1)"]}},
+{code:code2,operation:{step1:["padding","number"],step2:["border","number"],step3:["background-color","red,#e6b4fd,rgba(230, 180, 253, 1)"]}},
+{code:code3,operation:{step1:["padding","number"],step2:["border","number"],step3:["background-color","red,#e6b4fd,rgba(230, 180, 253, 1)"]}},
+{code:RamdaDemo1,operation:{step1:["padding","number"],step2:["border","number"],step3:["background-color","red,#e6b4fd,rgba(230, 180, 253, 1)"]}},
+
+
+]
+ 
+//export {code1,code2,code3,code4,code5,code6,code7,subGrid,cssGrid};
+
+export {codes};
+
+
+// {code:code3,operation:["step1","step2","step3"]},
+// {code:code4,operation:["step1","step2","step3"]},
+// {code:code5,operation:["step1","step2","step3"]},
+// {code:code6,operation:["step1","step2","step3"]},
+// {code:code7,operation:["step1","step2","step3"]},
